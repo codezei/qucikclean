@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function appendIframe () {
   const iframeContainer = document.querySelector('.iframe')
-  const iframeSrc = "https://www.google.com/maps/d/u/0/embed?mid=1Ez-vnNog1IFlCt8MnD96GeeCcufE-EU&ehbc=2E312F&noprof=1"
+  const iframeSrc = ""
   const iframe = document.createElement('iframe')
   iframe.setAttribute('src', iframeSrc)
   iframeContainer.appendChild(iframe)
@@ -188,7 +188,6 @@ function reviews() {
 
 window.addEventListener('load', function () {
   hideLoader();
-  // paralax ()
 })
 
 
@@ -215,17 +214,4 @@ function hideLoader() {
   let loader = document.querySelector(".loader-wrap");
   loader.style.display = "none";
   document.body.classList.add("animate");
-}
-
-
-function paralax () {
-  let items = document.querySelectorAll('.cleaner-animation')
-  let coef = 0.1
-  document.addEventListener('scroll', function () {
-
-      for(let i = 0; i < items.length; i++) {
-          let coord = items[i].parentElement.getBoundingClientRect().top * coef
-          items[i].style.setProperty('--coord', `${coord}px`);
-      }
-  })
 }
